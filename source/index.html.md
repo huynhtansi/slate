@@ -1,15 +1,11 @@
 ---
-title: API Reference
+title: DinoAd API Reference
 
 language_tabs:
   - shell
-  - ruby
-  - python
-  - javascript
 
 toc_footers:
-  - <a href='#'>Sign Up for a Developer Key</a>
-  - <a href='https://github.com/tripit/slate'>Documentation Powered by Slate</a>
+  - <a href='https://github.com/huynhtansi'>Documentation Powered by HTSI</a>
 
 includes:
   - errors
@@ -19,80 +15,21 @@ search: true
 
 # Introduction
 
-Welcome to the Kittn API! You can use our API to access Kittn API endpoints, which can get information on various cats, kittens, and breeds in our database.
-
-We have language bindings in Shell, Ruby, and Python! You can view code examples in the dark area to the right, and you can switch the programming language of the examples with the tabs in the top right.
-
-This example API documentation page was created with [Slate](https://github.com/tripit/slate). Feel free to edit it and use it as a base for your own API's documentation.
-
-# Authentication
+Welcome to the DinoAd API! You can use our API to access Dino Adserver API endpoints, which can get information on various advertisers, campaigns, and banners in our database.
 
 > To authorize, use this code:
-
-```ruby
-require 'kittn'
-
-api = Kittn::APIClient.authorize!('meowmeowmeow')
-```
-
-```python
-import kittn
-
-api = kittn.authorize('meowmeowmeow')
-```
 
 ```shell
 # With shell, you can just pass the correct header with each request
 curl "api_endpoint_here"
-  -H "Authorization: meowmeowmeow"
+  -H "Authorization: <Authentication Key>"
 ```
+# Banners
 
-```javascript
-const kittn = require('kittn');
-
-let api = kittn.authorize('meowmeowmeow');
-```
-
-> Make sure to replace `meowmeowmeow` with your API key.
-
-Kittn uses API keys to allow access to the API. You can register a new Kittn API key at our [developer portal](http://example.com/developers).
-
-Kittn expects for the API key to be included in all API requests to the server in a header that looks like the following:
-
-`Authorization: meowmeowmeow`
-
-<aside class="notice">
-You must replace <code>meowmeowmeow</code> with your personal API key.
-</aside>
-
-# Kittens
-
-## Get All Kittens
-
-```ruby
-require 'kittn'
-
-api = Kittn::APIClient.authorize!('meowmeowmeow')
-api.kittens.get
-```
-
-```python
-import kittn
-
-api = kittn.authorize('meowmeowmeow')
-api.kittens.get()
-```
+## Get All Banners
 
 ```shell
-curl "http://example.com/api/kittens"
-  -H "Authorization: meowmeowmeow"
-```
-
-```javascript
-const kittn = require('kittn');
-
-let api = kittn.authorize('meowmeowmeow');
-let kittens = api.kittens.get();
+curl "http://192.168.1.34:8080/adserver/www/delivery/api.php/rv_banners"
 ```
 
 > The above command returns JSON structured like this:
@@ -100,90 +37,167 @@ let kittens = api.kittens.get();
 ```json
 [
   {
-    "id": 1,
-    "name": "Fluffums",
-    "breed": "calico",
-    "fluffiness": 6,
-    "cuteness": 7
+    "bannerid": "1",
+    "campaignid": "1",
+    "contenttype": "gif",
+    "pluginversion": "0",
+    "storagetype": "web",
+    "filename": "3473ec14ba94cb29be3729db693f4c82.gif",
+    "imageurl": "",
+    "htmltemplate": "",
+    "htmlcache": "",
+    "width": "320",
+    "height": "240",
+    "weight": "1",
+    "seq": "0",
+    "target": "",
+    "url": "https://www.youtube.com/watch?v=-GlZvDxv9pA",
+    "alt": "",
+    "statustext": "",
+    "bannertext": "",
+    "description": "Finding Dory Banner",
+    "adserver": "",
+    "block": "0",
+    "capping": "0",
+    "session_capping": "0",
+    "compiledlimitation": "",
+    "acl_plugins": null,
+    "append": "",
+    "bannertype": "0",
+    "alt_filename": "",
+    "alt_imageurl": "",
+    "alt_contenttype": "",
+    "comments": "",
+    "updated": "2016-07-06 10:33:44",
+    "acls_updated": "0000-00-00 00:00:00",
+    "keyword": "",
+    "transparent": "0",
+    "parameters": "N;",
+    "status": "0",
+    "ext_bannertype": null,
+    "prepend": "",
+    "iframe_friendly": "0"
   },
   {
-    "id": 2,
-    "name": "Max",
-    "breed": "unknown",
-    "fluffiness": 5,
-    "cuteness": 10
+    "bannerid": "2",
+    "campaignid": "1",
+    "contenttype": "",
+    "pluginversion": "0",
+    "storagetype": "html",
+    "filename": "",
+    "imageurl": "",
+    "htmltemplate": "<A HREF=\"https://www.youtube.com/watch?v=-GlZvDxv9pAl\" onMouseOver=\"window.status='TEXT IN STATUS BAR'; return true\">\r\n<IMG SRC=\"http://blogs.coventry.ac.uk/uncovered/wp-content/uploads/sites/7/2016/01/Finding-Dory-GIF.gif\" BORDER=\"0\" WIDTH=\"468\" HEIGHT=\"270\" ALT=\"Come to my page!\"></A>",
+    "htmlcache": "<a href=\"{clickurl}https%3A%2F%2Fwww.youtube.com%2Fwatch%3Fv%3D-GlZvDxv9pAl\" onMouseOver=\"window.status='TEXT IN STATUS BAR'; return true\"target=\"{target}\">\r\n<IMG SRC=\"http://blogs.coventry.ac.uk/uncovered/wp-content/uploads/sites/7/2016/01/Finding-Dory-GIF.gif\" BORDER=\"0\" WIDTH=\"468\" HEIGHT=\"270\" ALT=\"Come to my page!\"></A>",
+    "width": "480",
+    "height": "270",
+    "weight": "1",
+    "seq": "0",
+    "target": "",
+    "url": "",
+    "alt": "",
+    "statustext": "",
+    "bannertext": "",
+    "description": "HTML Banner",
+    "adserver": "",
+    "block": "0",
+    "capping": "0",
+    "session_capping": "0",
+    "compiledlimitation": "",
+    "acl_plugins": null,
+    "append": "",
+    "bannertype": "0",
+    "alt_filename": "",
+    "alt_imageurl": "",
+    "alt_contenttype": "",
+    "comments": "",
+    "updated": "2016-07-06 08:52:23",
+    "acls_updated": "0000-00-00 00:00:00",
+    "keyword": "",
+    "transparent": "0",
+    "parameters": "N;",
+    "status": "0",
+    "ext_bannertype": "bannerTypeHtml:oxHtml:genericHtml",
+    "prepend": "",
+    "iframe_friendly": "1"
   }
 ]
 ```
 
-This endpoint retrieves all kittens.
+This endpoint retrieves all banners.
 
 ### HTTP Request
 
-`GET http://example.com/api/kittens`
+`GET http://192.168.1.34:8080/adserver/www/delivery/api.php/rv_banners`
 
 ### Query Parameters
 
 Parameter | Default | Description
 --------- | ------- | -----------
-include_cats | false | If set to true, the result will also include cats.
-available | true | If set to false, the result will include kittens that have already been adopted.
 
-<aside class="success">
-Remember — a happy kitten is an authenticated kitten!
-</aside>
 
-## Get a Specific Kitten
-
-```ruby
-require 'kittn'
-
-api = Kittn::APIClient.authorize!('meowmeowmeow')
-api.kittens.get(2)
-```
-
-```python
-import kittn
-
-api = kittn.authorize('meowmeowmeow')
-api.kittens.get(2)
-```
+## Get a Specific banner
 
 ```shell
-curl "http://example.com/api/kittens/2"
-  -H "Authorization: meowmeowmeow"
-```
-
-```javascript
-const kittn = require('kittn');
-
-let api = kittn.authorize('meowmeowmeow');
-let max = api.kittens.get(2);
+curl "http://192.168.1.34:8080/adserver/www/delivery/api.php/rv_banners/1"
 ```
 
 > The above command returns JSON structured like this:
 
 ```json
 {
-  "id": 2,
-  "name": "Max",
-  "breed": "unknown",
-  "fluffiness": 5,
-  "cuteness": 10
+  "bannerid": "1",
+  "campaignid": "1",
+  "contenttype": "gif",
+  "pluginversion": "0",
+  "storagetype": "web",
+  "filename": "3473ec14ba94cb29be3729db693f4c82.gif",
+  "imageurl": "",
+  "htmltemplate": "",
+  "htmlcache": "",
+  "width": "320",
+  "height": "240",
+  "weight": "1",
+  "seq": "0",
+  "target": "",
+  "url": "https://www.youtube.com/watch?v=-GlZvDxv9pA",
+  "alt": "",
+  "statustext": "",
+  "bannertext": "",
+  "description": "Finding Dory Banner",
+  "adserver": "",
+  "block": "0",
+  "capping": "0",
+  "session_capping": "0",
+  "compiledlimitation": "",
+  "acl_plugins": null,
+  "append": "",
+  "bannertype": "0",
+  "alt_filename": "",
+  "alt_imageurl": "",
+  "alt_contenttype": "",
+  "comments": "",
+  "updated": "2016-07-06 10:33:44",
+  "acls_updated": "0000-00-00 00:00:00",
+  "keyword": "",
+  "transparent": "0",
+  "parameters": "N;",
+  "status": "0",
+  "ext_bannertype": null,
+  "prepend": "",
+  "iframe_friendly": "0"
 }
 ```
 
-This endpoint retrieves a specific kitten.
+This endpoint retrieves a specific banner.
 
-<aside class="warning">Inside HTML code blocks like this one, you can't use Markdown, so use <code>&lt;code&gt;</code> blocks to denote code.</aside>
 
 ### HTTP Request
 
-`GET http://example.com/kittens/<ID>`
+`GET http://192.168.1.34:8080/adserver/www/delivery/api.php/rv_banners/<ID>`
 
 ### URL Parameters
 
 Parameter | Description
 --------- | -----------
-ID | The ID of the kitten to retrieve
+ID | The ID of the banner to retrieve
 
